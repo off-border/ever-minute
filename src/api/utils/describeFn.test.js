@@ -1,6 +1,4 @@
-import {
-    describe, it, expect, vi,
-} from 'vitest';
+import { describe, it, expect } from 'vitest';
 import describeFn from './describeFn';
 
 const setup = ({ name = 'some-name', description = 'some-description', args } = {}, fn) => {

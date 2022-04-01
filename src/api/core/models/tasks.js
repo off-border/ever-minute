@@ -1,4 +1,4 @@
-export const createTasksStorage = (createStorage) => {
+export const createTasksApi = (createStorage) => {
     const storage = createStorage({ modelName: 'tasks' });
 
     return {

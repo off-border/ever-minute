@@ -2,10 +2,16 @@
   <router-view />
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+// import { defineComponent } from 'vue';
+import { provide } from 'vue';
+import { createApi } from './api/api';
 
-export default defineComponent({
-  name: 'App'
-})
+const apiCall = createApi();
+
+provide('apiCall', apiCall);
+
+// export default defineComponent({
+//     name: 'App',
+// });
 </script>
