@@ -42,6 +42,6 @@ describe('utils/describeFn()', () => {
         });
         const describedFn = createDescribedFn();
 
-        expect(describedFn).toThrow('[someArg] is required');
+        expect(describedFn).toThrow('[someArg] must be of type string');
     });
 });
