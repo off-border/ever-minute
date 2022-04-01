@@ -1,4 +1,6 @@
-import { describe, it, expect, vi } from 'vitest'
+import {
+    describe, it, expect, vi,
+} from 'vitest';
 import { addTask } from './addTask';
 
 const setup = () => {
@@ -14,9 +16,9 @@ describe('use-cases', () => {
         it('should add task to store', () => {
             const { tasksStore } = setup();
 
-            addTask(tasksStore, {title: 'task title', text: 'task text'});
+            addTask(tasksStore, { title: 'task title', text: 'task text' });
 
-            expect(tasksStore.create).toHaveBeenCalled({title: 'task title', text: 'task text'});
+            expect(tasksStore.create).toHaveBeenCalled({ title: 'task title', text: 'task text' });
         });
     });
-})
+});
