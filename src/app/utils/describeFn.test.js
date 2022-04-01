@@ -1,12 +1,12 @@
-import { describe, it, expect, vi } from 'vitest'
+import {
+    describe, it, expect, vi,
+} from 'vitest';
 import describeFn from './describeFn';
 
-const setup = ({name = 'some-name', description = 'some-description', args} = {}, fn) => {
-
+const setup = ({ name = 'some-name', description = 'some-description', args } = {}, fn) => {
     // console.log('----setup', descParams);
 
-
-    const createDescribedFn = () => describeFn({name, description, args}, fn);
+    const createDescribedFn = () => describeFn({ name, description, args }, fn);
 
     return {
         createDescribedFn,
@@ -14,34 +14,52 @@ const setup = ({name = 'some-name', description = 'some-description', args} = {}
 };
 
 describe('utils/describeFn()', () => {
-    it('should throw error if endpointName is not provided', () => {
-        const { createDescribedFn } = setup({ name: '' });
+    describe('throw error when:', () => {
+        it('name is not provided', () => {
+            const { createDescribedFn } = setup({ name: '' });
 
-        expect(createDescribedFn).toThrow('name is not provided');
-    });
-
-    it('should throw error if description is not provided', () => {
-        const { createDescribedFn } = setup({ description: ''});
-
-        expect(createDescribedFn).toThrow('description is not provided');
-    });
-
-    it('should throw when required param is missing', () => {
-        const { createDescribedFn } = setup({
-            args: { someArg: { required: true } }
+            expect(createDescribedFn).toThrow('name is not provided');
         });
 
-        const describedFn = createDescribedFn();
+        it('description is not provided', () => {
+            const { createDescribedFn } = setup({ description: '' });
 
-        expect(describedFn).toThrow('[someArg] is required');
+            expect(createDescribedFn).toThrow('description is not provided');
+        });
+
+        it('required param is missing', async () => {
+            const { createDescribedFn } = setup({
+                args: { someArg: { required: true } },
+            });
+
+            const describedFn = createDescribedFn();
+
+            await expect(describedFn).toThrow('[someArg] is required');
+        });
+
+        it('provided param has wrong type', () => {
+            const { createDescribedFn } = setup({
+                name: 'some-name',
+                description: 'description',
+                args: { someArg: { type: 'string' } },
+            });
+            const describedFn = createDescribedFn();
+
+            expect(describedFn).toThrow('[someArg] must be of type string');
+        });
     });
 
-    it('should throw when param has wrong type', () => {
-        const { createDescribedFn } = setup({ name: 'some-name', description: 'description',
-            args: { someArg: { type: 'string' } }
-        });
-        const describedFn = createDescribedFn();
+    describe('if all parameters are provided correctlye', () => {
+        it('run wrapped function', () => {
+            const { createDescribedFn } = setup({
+                name: 'some-name',
+                description: 'description',
+                args: { someArg: { type: 'string' } },
+            }, ({ someArg }) => (`returned ${someArg}`));
 
-        expect(describedFn).toThrow('[someArg] must be of type string');
+            const describedFn = createDescribedFn();
+
+            expect(describedFn({ someArg: 'some-value' })).toBe('returned some-value');
+        });
     });
 });
