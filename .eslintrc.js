@@ -82,5 +82,7 @@ module.exports = {
     'quotes': ['error', 'single'],
     'semi': ["error", "always"],
     'no-use-before-define': 0,
+    'no-nested-ternary': 0,
+    'no-plusplus': 0,
   }
 }
