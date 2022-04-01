@@ -3,18 +3,18 @@ import { createTasksStorage } from './models/tasks';
 import { addTask } from './use-cases/addTask';
 
 export const createAppCore = () => {
-    const storages = {
+    const models = {
         tasks: createTasksStorage(createStorage),
     };
 
     const useCases = {
         addTask(...args) {
-            return addTask(storages.tasks, ...args);
+            return addTask(models.tasks, ...args);
         },
     };
 
     return {
-        storages,
+        models,
         useCases,
     };
 };

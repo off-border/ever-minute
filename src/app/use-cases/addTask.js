@@ -1,1 +1,1 @@
-export const addTask = (tasksStore, { title, text }) => tasksStore.create({ title, text });
+export const addTask = (tasksApi, { title, text }) => tasksApi.create({ title, text });
