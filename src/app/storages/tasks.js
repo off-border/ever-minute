@@ -1,5 +1,5 @@
 export const createTasksStorage = () => {
-    let tasks = [];
+    const tasks = [];
 
     return {
         create: (task) => {
@@ -12,5 +12,5 @@ export const createTasksStorage = () => {
         read: (id) => tasks[id],
 
         readAll: () => tasks,
-    }
+    };
 };

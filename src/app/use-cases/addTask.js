@@ -1,3 +1,3 @@
-export const addTask = (tasksStore, task) => {
-    return tasksStore.create(task);
-}
+export const addTask = (tasksStore, { title, text }) => {
+    tasksStore.create({ title, text });
+};

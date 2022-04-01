@@ -1,6 +1,4 @@
 export default function describeFn({ name, description, args }, fn) {
-    console.log('----describe');
-
     if (!name) {
         throw new Error('name is not provided');
     }
@@ -18,7 +16,7 @@ export default function describeFn({ name, description, args }, fn) {
     };
 }
 
-function validateParams(argsConfig, args) {
+export function validateParams(argsConfig, args) {
     Object.entries(argsConfig).forEach(([argName, config]) => {
         validate(argName, config, args?.[argName]);
     });
