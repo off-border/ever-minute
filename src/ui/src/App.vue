@@ -4,7 +4,7 @@
 
 <script setup>
 import { provide } from 'vue';
-import { createApi } from './api/api';
+import { createApi } from '../../api/api';
 
 const apiCall = createApi();
 provide('apiCall', apiCall);

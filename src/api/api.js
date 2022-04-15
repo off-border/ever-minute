@@ -1,5 +1,5 @@
-import { createStorage } from '../storages/inMemoryStoragee';
-import { createAppCore } from '../app/coree';
+import { createStorage } from '../storages/inMemoryStorage';
+import { createAppCore } from '../core/core';
 
 export const createApi = () => {
     const core = createAppCore(createStorage);

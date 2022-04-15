@@ -29,7 +29,6 @@ module.exports = configure((/* ctx */) => ({
     // https://v2.quasar.dev/quasar-cli/boot-files
     boot: [
         'i18n',
-
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
