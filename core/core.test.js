@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createAppCore } from './core';
-import { createStorage } from '../storages/inMemoryStorage';
+import { createStorage } from './storages/inMemoryStorage';
 
 const setup = () => {
     const core = createAppCore(createStorage);

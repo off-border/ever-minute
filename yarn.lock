@@ -94,6 +94,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@quasar/vite-plugin@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@quasar/vite-plugin/-/vite-plugin-1.0.9.tgz#130c277bf7ef10c964d6ac9fd1cbdf88670fcb3a"
+  integrity sha512-i3tOXLu9SvBG/u/VH/vlPpwzU3QHVtogoSl23Y3i9Clgo6XCtm9mHB0XnQvsLQgNfUTkAKJPKnGwAPQd9uBu1A==
+
 "@rollup/pluginutils@^4.1.0":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
@@ -1627,6 +1632,11 @@ punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+quasar@^2.6.0:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.6.6.tgz#00bc2acbe5ef2492f7b959f539fd2e469e7082a6"
+  integrity sha512-rXoGZROOXVutQX14l/ys0te/NrgQ754krI0Vz52pBXdznyS+dTL6AgGpr3JMwffoxpxhQyedrL2jOAMpq+Jsgw==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
