@@ -4,11 +4,14 @@ import TaskList from './TasksList.vue';
 import ButtonAdd from '../components/ButtonAdd.vue';
 
 const setup = () => {
-    const apiCall = vi.fn();
+    const api = {
+        addTask: vi.fn(),
+    };
+
     const tasksList = shallowMount(TaskList, {
         global: {
             provide: {
-                apiCall,
+                api,
             },
         },
     });
@@ -19,7 +22,7 @@ const setup = () => {
     return {
         tasksList,
         buttonAdd,
-        apiCall,
+        api,
         clickAddButton,
     };
 };
@@ -36,11 +39,11 @@ describe('TasksList', () => {
 
         describe('when AddButton clicked', () => {
             it('create new task', () => {
-                const { clickAddButton, apiCall } = setup();
+                const { clickAddButton, api } = setup();
 
                 clickAddButton();
 
-                expect(apiCall.called).toBeTruthy();
+                expect(api.addTask).toHaveBeenCalled();
             });
         });
     });

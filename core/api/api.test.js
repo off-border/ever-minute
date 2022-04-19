@@ -1,25 +1,23 @@
-import { describe, it, expect } from 'vitest';
 import { createApi } from './api';
 
 const setup = () => {
-    const apiCall = createApi();
+    const apiCaller = vi.fn();
+    const createApiCaller = vi.fn(() => apiCaller);
 
-    return { apiCall };
+    const api = createApi(createApiCaller);
+
+    return {
+        api,
+        apiCaller,
+    };
 };
 
-describe('api.createApi()', () => {
-    it('should return function', () => {
-        const { apiCall } = setup();
+describe('api: createApi()', () => {
+    it('should call api methods', () => {
+        const { api, apiCaller } = setup();
 
-        expect(typeof apiCall).toBe('function');
-    });
+        api.addTask('arg1', 'arg2');
 
-    it('should add / read task', () => {
-        const { apiCall } = setup();
-
-        const taskId = apiCall('tasks.add', { title: 'test-title', text: 'test-text' });
-        const savedTask = apiCall('tasks.get', { id: taskId });
-
-        expect(savedTask).toEqual({ id: taskId, title: 'test-title', text: 'test-text' });
+        expect(apiCaller).toHaveBeenCalledWith('tasks.add', 'arg1', 'arg2');
     });
 });

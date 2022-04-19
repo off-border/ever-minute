@@ -8,9 +8,7 @@
   "scripts": {
     "dev": "yarn --cwd ui quasar dev",
     "lint": "eslint --ext .js,.vue ./",
-    "test:run": "vitest run --reporter=verbose",
-    "test": "vitest --reporter=verbose",
-    "test:core": "vitest --reporter=verbose --dir core",
+    "test:core": "vitest --reporter=verbose --dir core -c vitest-core.config.js",
     "test:ui": "vitest --reporter=verbose  --dir ui -c ui/vitest.config.js",
     "postinstall": "yarn --cwd ui && echo =====installed===== || ====== installation failed ======"
   },
