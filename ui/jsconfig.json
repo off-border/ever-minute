@@ -36,5 +36,6 @@
     "src/ui/.quasar",
     ".vscode",
     "node_modules"
-  ]
+  ],
+  "jsx": "preserve",
 }
