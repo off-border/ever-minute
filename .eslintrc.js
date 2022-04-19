@@ -89,5 +89,7 @@ module.exports = {
     'no-use-before-define': 0,
     'no-nested-ternary': 0,
     'no-plusplus': 0,
+    'no-console': 1,
+    'no-unused-vars': 1,
   }
 }
