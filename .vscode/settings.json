@@ -8,8 +8,8 @@
   ],
   "eslint.validate": [
     "javascript",
-    // "javascriptreact",
-    // "typescript",
+    "javascriptreact",
+    "typescript",
     "vue"
   ]
 }
