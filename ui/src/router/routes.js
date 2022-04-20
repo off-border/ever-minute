@@ -3,7 +3,15 @@ const routes = [
         path: '/',
         component: () => import('layouts/MainLayout.vue'),
         children: [
-            { path: '', component: () => import('pages/TasksList.vue') },
+            {
+                path: '',
+                component: () => import('pages/TasksPage.vue'),
+            },
+            {
+                name: 'task',
+                path: 'task/:id',
+                component: () => import('pages/TaskPage.vue'),
+            },
         ],
     },
 

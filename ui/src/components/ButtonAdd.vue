@@ -1,7 +1,6 @@
 <template>
-    <q-button>add</q-button>
+    <q-btn>add</q-btn>
 </template>
 
 <script setup>
-
 </script>
