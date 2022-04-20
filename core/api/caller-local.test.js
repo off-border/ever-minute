@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { createApiCaller } from './api-caller-local';
+import { createApiCaller } from './caller-local';
 
 const setup = () => {
     const apiCall = createApiCaller();
@@ -17,9 +17,9 @@ describe('api: createApiCaller()', () => {
     it('should add / read task', () => {
         const { apiCall } = setup();
 
-        const taskId = apiCall('tasks.add', { title: 'test-title', text: 'test-text' });
+        const taskId = apiCall('tasks.add', { title: 'test-title', description: 'test-description' });
         const savedTask = apiCall('tasks.get', { id: taskId });
 
-        expect(savedTask).toEqual({ id: taskId, title: 'test-title', text: 'test-text' });
+        expect(savedTask).toEqual({ id: taskId, title: 'test-title', description: 'test-description' });
     });
 });

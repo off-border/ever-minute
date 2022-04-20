@@ -26,9 +26,9 @@ describe('app-core', () => {
     it('should inject storage to use-case', async () => {
         const { core } = setup();
 
-        const taskId = await core.useCases.addTask({ title: 'title', text: 'text' });
+        const taskId = await core.useCases.addTask({ title: 'title', description: 'description' });
         const savedTask = await core.models.tasks.read(taskId);
 
-        expect(savedTask).toEqual({ id: taskId, title: 'title', text: 'text' });
+        expect(savedTask).toEqual({ id: taskId, title: 'title', description: 'description' });
     });
 });

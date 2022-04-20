@@ -11,6 +11,9 @@ export const createApiCaller = () => {
 
     const apiCall = (methodName, ...args) => {
         const method = apiMap[methodName];
+
+        console.log('--- apiCall, ', methodName, args);
+
         if (!method) {
             return { error: `unknown api method ${methodName}` };
         }

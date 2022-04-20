@@ -16,9 +16,9 @@ describe('use-cases', () => {
         it('should add task to store', () => {
             const { tasksStore } = setup();
 
-            addTask(tasksStore, { title: 'task title', text: 'task text' });
+            addTask(tasksStore, { title: 'task title', description: 'task description' });
 
-            expect(tasksStore.create).toHaveBeenCalled({ title: 'task title', text: 'task text' });
+            expect(tasksStore.create).toHaveBeenCalled({ title: 'task title', description: 'task description' });
         });
     });
 });
