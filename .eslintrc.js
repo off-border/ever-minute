@@ -91,5 +91,6 @@ module.exports = {
     'no-plusplus': 0,
     'no-console': 1,
     'no-unused-vars': 1,
+    'implicit-arrow-linebreak': 0,
   }
 }
