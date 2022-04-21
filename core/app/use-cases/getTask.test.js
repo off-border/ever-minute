@@ -10,7 +10,7 @@ const setup = () => {
 };
 
 describe('use-cases', () => {
-    describe('getTask', () => {
+    describe('getTask()', () => {
         it('should return task from store', () => {
             const { tasksStore } = setup();
 

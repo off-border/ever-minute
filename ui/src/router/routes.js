@@ -5,12 +5,12 @@ const routes = [
         children: [
             {
                 path: '',
-                component: () => import('pages/TasksPage.vue'),
+                component: () => import('pages/Taskss.page.vue'),
             },
             {
                 name: 'task',
                 path: 'task/:id',
-                component: () => import('pages/TaskPage.vue'),
+                component: () => import('pages/Task.page.vue'),
             },
         ],
     },

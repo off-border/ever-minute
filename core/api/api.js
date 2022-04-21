@@ -5,5 +5,6 @@ export const createApi = (createApiCaller) => {
 
     return {
         addTask: (...args) => apiCall('tasks.add', ...args),
+        getTask: (...args) => apiCall('tasks.get', ...args),
     };
 };
