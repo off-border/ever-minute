@@ -5,21 +5,26 @@ export function createStorage({ modelName }) {
         dataMap[modelName] = {};
     }
 
-    const data = dataMap[modelName];
+    const store = dataMap[modelName];
 
-    const getNewId = () => `${Object.keys(data).length}-${Date.now()}`;
+    const getNewId = () => `${Object.keys(store).length}-${Date.now()}`;
 
     return {
-        create: (task) => {
+        create: (data) => {
             const id = getNewId();
 
-            data[id] = { ...task, id };
+            store[id] = { ...data, id };
 
             return id;
         },
 
-        read: (id) => data[id],
+        read: (id) => store[id],
 
-        readAll: () => data,
+        readAll: () => store,
+
+        update: (id, newData) => {
+            const data = store[id];
+            store[id] = { ...data, ...newData };
+        },
     };
 }
