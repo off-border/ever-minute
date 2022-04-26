@@ -1,4 +1,4 @@
-## Add task view and editing form
+### Add task view and editing form
 
   - [ ] add task view
   - [ ] add edit form
@@ -7,11 +7,12 @@
 
 --------------
 
-## Add local-storage
+### Add local-storage
 
 move app from in-memory to local storage
 
-  - [ ] add tests
+  - [x] ~add unified storage test~
+  - [ ] add storage tests
   - [ ] add storage
   - [ ] use in app
 
