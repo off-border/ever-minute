@@ -1,3 +1,5 @@
+# New
+
 ### Add task view and editing form
 
   - [ ] add task view
@@ -11,10 +13,29 @@
 
 move app from in-memory to local storage
 
-  - [x] ~add unified storage test~
   - [ ] add storage tests
   - [ ] add storage
   - [ ] use in app
+
+-------------------------------------
+-------------------------------------
+-------------------------------------
+
+# Done
+
+<style>
+    #done ~ * {
+        opacity: 0.5;
+    }
+</style>
+
+### Add unified storage test
+
+move app from in-memory to local storage
+
+  - [x] add unified storage test
+  - [x] use in old tests
+
 
 --------------
 
