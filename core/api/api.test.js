@@ -2,9 +2,9 @@ import { createApi } from './api';
 
 const setup = () => {
     const apiCaller = vi.fn();
-    const createApiCaller = vi.fn(() => apiCaller);
+    const createApiBus = vi.fn(() => apiCaller);
 
-    const api = createApi(createApiCaller);
+    const api = createApi(createApiBus);
 
     return {
         api,

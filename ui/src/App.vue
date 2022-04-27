@@ -5,9 +5,9 @@
 <script setup>
 import { provide } from 'vue';
 import { createApi } from '../../core/api/api';
-import { createApiCaller } from '../../core/api/caller-local';
+import { createApiBus } from '../../core/api/caller-local';
 
-const api = createApi(createApiCaller);
+const api = createApi(createApiBus);
 
 console.log('--- api, ', api);
 

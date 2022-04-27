@@ -13,5 +13,6 @@ describe('localStorage', () => {
             },
         };
     });
+
     testStorage(createStorage);
 });

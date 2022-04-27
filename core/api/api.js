@@ -1,7 +1,5 @@
-export const createApi = (createApiCaller) => {
-    const apiCall = createApiCaller();
-
-    console.log('--- apiCall, ', apiCall);
+export const createApi = (createApiBus) => {
+    const apiCall = createApiBus();
 
     return {
         addTask: (...args) => apiCall('tasks.add', ...args),

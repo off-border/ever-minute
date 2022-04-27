@@ -2,8 +2,8 @@
 
 ### Add local-storage
 move app from in-memory to local storage
-  - [ ] add storage tests
-  - [ ] add storage
+  - [x] add storage tests
+  - [x] add storage
   - [ ] use in app
 --------------
 

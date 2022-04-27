@@ -1,13 +1,21 @@
 import { describe, it, expect } from 'vitest';
-import { createApiCaller } from './caller-local';
+import { createApiBus } from './bus-local';
 
 const setup = () => {
-    const apiCall = createApiCaller();
+    const storage = {};
+    global.localStorage = {
+        getItem: (key) => storage[key],
+        setItem: (key, value) => {
+            storage[key] = value;
+        },
+    };
+
+    const apiCall = createApiBus();
 
     return { apiCall };
 };
 
-describe('api: createApiCaller()', () => {
+describe('api: createApiBus()', () => {
     it('should return function', () => {
         const { apiCall } = setup();
 

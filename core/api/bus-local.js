@@ -1,7 +1,7 @@
-import { createStorage } from '../storages/inMemoryStorage';
+import { createStorage } from '../storages/localStorage';
 import { createAppCore } from '../core';
 
-export const createApiCaller = () => {
+export const createApiBus = () => {
     const core = createAppCore(createStorage);
 
     const apiMap = {
@@ -11,8 +11,6 @@ export const createApiCaller = () => {
 
     const apiCall = (methodName, ...args) => {
         const method = apiMap[methodName];
-
-        console.log('--- apiCall, ', methodName, args);
 
         if (!method) {
             return { error: `unknown api method ${methodName}` };
