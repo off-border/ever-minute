@@ -12,7 +12,6 @@ export function createStorage({ modelName }) {
     return {
         create: (data) => {
             const id = getNewId();
-
             store[id] = { ...data, id };
 
             return id;

@@ -1,21 +1,18 @@
 # New
 
-### Add task view and editing form
+### Add local-storage
+move app from in-memory to local storage
+  - [ ] add storage tests
+  - [ ] add storage
+  - [ ] use in app
+--------------
 
+### Add task view and editing form
   - [ ] add task view
   - [ ] add edit form
   - [ ] when clicked on `edit` button
     - [ ] open edit form
-
 --------------
-
-### Add local-storage
-
-move app from in-memory to local storage
-
-  - [ ] add storage tests
-  - [ ] add storage
-  - [ ] use in app
 
 -------------------------------------
 -------------------------------------
@@ -30,12 +27,8 @@ move app from in-memory to local storage
 </style>
 
 ### Add unified storage test
-
 move app from in-memory to local storage
-
   - [x] add unified storage test
   - [x] use in old tests
-
-
 --------------
 
