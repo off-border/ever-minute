@@ -1,17 +1,23 @@
 import { shallowMount } from '@vue/test-utils';
 import { expect, vi } from 'vitest';
-import TaskList from './TasksList.vue';
+import { routerKey } from 'vue-router';
+import TaskList from './Tasks.page.vue';
 import ButtonAdd from '../components/ButtonAdd.vue';
 
 const setup = () => {
     const api = {
-        addTask: vi.fn(),
+        addTask: vi.fn(() => 1234),
+    };
+
+    const Router = {
+        push: vi.fn(),
     };
 
     const tasksList = shallowMount(TaskList, {
         global: {
             provide: {
                 api,
+                [routerKey]: Router,
             },
         },
     });
@@ -24,15 +30,14 @@ const setup = () => {
         buttonAdd,
         api,
         clickAddButton,
+        Router,
     };
 };
 
 describe('TasksList', () => {
-    describe('Adding new task', () => {
+    describe('Add new task', () => {
         it('should show add buton', () => {
             const { buttonAdd } = setup();
-
-            console.log('--- html', buttonAdd.html());
 
             expect(buttonAdd.exists()).toBeTruthy();
         });
@@ -43,7 +48,24 @@ describe('TasksList', () => {
 
                 clickAddButton();
 
-                expect(api.addTask).toHaveBeenCalled();
+                expect(api.addTask).toHaveBeenCalledWith({
+                    title: 'new task',
+                    description: 'new task description',
+                    status: 'new task status',
+                });
+            });
+
+            it('open created task', async () => {
+                const { clickAddButton, Router } = setup();
+
+                await clickAddButton();
+
+                expect(Router.push).toHaveBeenCalledWith({
+                    name: 'task',
+                    params: {
+                        id: expect.any(Number),
+                    },
+                });
             });
         });
     });

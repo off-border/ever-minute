@@ -4,10 +4,9 @@
 
 <script setup>
 import { provide } from 'vue';
-import { createApi } from '../../core/api/api';
-import { createRpcBus } from '../../core/api/caller-local';
+import { createLocalApi } from '../../core/api/api-local';
 
-const api = createApi(createRpcBus);
+const api = createLocalApi();
 
 console.log('--- api, ', api);
 

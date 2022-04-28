@@ -14,7 +14,7 @@ const api = inject('api');
 const Router = useRouter();
 
 const addTask = async () => {
-    const taskId = api.addTask({
+    const taskId = await api.addTask({
         title: 'new task',
         description: 'new task description',
         status: 'new task status',
